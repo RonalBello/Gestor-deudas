@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/cruddeudas.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Gestión Deudas</title>
+</head>
+
+<body>
+
+    <div class="contenedorPrincipal">
+
+        <div class="titulo">
+            <h1>Gestion de Deudas</h1>
+        </div>
+        <div class="opciones">
+            <select id="deudores" onchange="cambiarNombreIndicador()"></select>
+        </div>
+        <div class="informacion">
+            <h3 id="textoIndicador"></h3>
+            <label>Deuda Actual</label>
+            <input type="number" id="deudaActual" readonly>
+        </div>
+        <div class="acciones">
+            <label>Acciones a ralizar</label>
+            <input type="number" id="valorAModificar" placeholder="Ingrese el valor a modificar">
+            <button onclick="restarSaldo(deudor)">Restar al Saldo</button>
+            <button onclick="sumarSaldo(deudor)">Sumar al Saldo</button>
+            <button onclick="guardar(deudor)">Guardar Cambios</button>
+        </div>
+    </div>
+
+    <script>
+
+        deudores = JSON.parse(localStorage.getItem("deudores") || "[]");
+        opcionesDeudores = document.getElementById("deudores")
+
+        for (let i = 0; i < deudores.length; i++) {
+            deudor = document.createElement("option")
+            deudor.textContent = deudores[i].nombre
+            opcionesDeudores.appendChild(deudor)
+        }
+
+        function cambiarNombreIndicador() {
+
+            indicador = document.getElementById("textoIndicador")
+            deudor = document.getElementById("deudores")
+
+            indicador.textContent = "Deuda de: " + deudor.value
+
+            mostarDeuda(deudor)
+        }
+
+        indicador = document.getElementById("textoIndicador")
+        deudor = document.getElementById("deudores")
+
+        indicador.textContent = "Deuda de: " + deudor.value
+
+        mostarDeuda(deudor)
+    </script>
+
+</body>
+
+</html>

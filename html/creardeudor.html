@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/cruddeudor.js"></script>
+    <script src="../js/deudor.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <title>Crear Deudor</title>
+</head>
+<body>
+
+    <div class="contenedorPrincipal">
+
+         <div class="titulo"> <h1>Crear Deudor</h1></div>
+       
+
+        <div class="formulario">
+    
+            <label>Nombre:</label>
+            <input type="text" id="nombre">
+    
+            <button onclick="guardar()">Guardar</button>
+        </div>
+    
+    
+        <h3>Lista de deudores</h3>
+    
+        <div class="contenedorTablaDeudores">
+    
+         
+    
+            <table id="tablaDeudores">
+            </table>
+    
+        </div>
+
+
+    </div>
+
+    
+
+    <script>
+
+        cargarTabla()
+
+    </script>
+    
+</body>
+</html>
