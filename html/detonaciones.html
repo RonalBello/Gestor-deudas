@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="../js/detonacion.js"></script>
+    <script src="../js/egresos.js"></script>
+    <script src="../js/viajes.js"></script>
+    <script src="../js/funcionalidades.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="contenedorFlex"">
+    
+        <div class=" parteIzquierda">
+
+        <h2>Datos de la Detonacion</h2>
+
+        Fecha
+        <input type="date" id="fechaDetonacion">
+
+        Nombre
+        <input type=" text" id="nombreDetonacion">
+
+        <table id="viajesPorDetonacion" border="1">
+        </table>
+
+        <button onclick="guardarDetonacion()">Guardar Detonación</button>
+
+
+    </div>
+
+    <div class="parteDerecha">
+
+        <h2>Datos del Viaje</h2>
+
+        Fecha
+        <input type="date" id="fechaViaje">
+
+        Nombre del Viaje
+        <input type="text" id="nombreViaje">
+
+        Valor del Viaje
+        <input type="number" id="valorViaje">
+
+        Egresos
+        Tipo de Egreso
+        <input type="text" id="nombreEgreso">
+
+        Valor
+        <input type="number" id="valorEgreso">
+
+        <button onclick=" crearListaEgresos()">Agregar Egreso</button>
+
+        <table id="egresosPorViaje" border="1">
+
+
+        </table>
+
+        Total valor del egreso :
+        <input type="text" id="totalEgreso" readonly>
+
+        <button onclick="crearListaViajes()">Guardar Viaje</button>
+
+    </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
